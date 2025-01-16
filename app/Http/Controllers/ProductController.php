@@ -43,7 +43,6 @@ class ProductController extends Controller {
         $product->price = $request->price;
         $product->stock = $request->stock;
         $product->description = $request->description;
-        // image
         $image = $request->image;
         $ext = $image->getClientOriginalExtension();
         $imageName = time() . '.' . $ext;
@@ -113,7 +112,7 @@ class ProductController extends Controller {
             $products = Product::where( 'name', 'LIKE', '%' . $request->search . '%' )->orWhere( 'description', 'LIKE', '%' . $request->search . '%' )->paginate( 5 );
 
             if ( $products->isNotEmpty() ) {
-                $output = ''; // Initialize the $output variable
+                $output = '';
 
                 foreach ( $products as $product ) {
                     $output .= '<tr>' .

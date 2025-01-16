@@ -79,7 +79,6 @@
             <div class="d-flex mt-4 justify-content-end">
                 {!! $products->links('pagination::bootstrap-5') !!}
             </div>
-            {{-- paginaion style --}}
             <style>
                 .d-none.flex-sm-fill.d-sm-flex.align-items-sm-center.justify-content-sm-between {
     gap: 15px;
